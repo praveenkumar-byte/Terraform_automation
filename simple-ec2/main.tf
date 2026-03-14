@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
         source = "hashicorp/aws"
-        version = "~> 5.0"
+        version = "~> 5.92"
     }
   }
 }
@@ -11,12 +11,12 @@ provider "aws" {
 }
 
 # passing the latest aws_ami and in vlaue we are getting this in plcae of *
-data "aws_ami" "amazon_linux" {
+data "aws_ami" "ubuntu" {
     most_recent = true
-    owners = ["amazon"]
+    owners = [var.ami_owner]
     filter {
       name ="name"
-      values = [amzn2-ami-hvm-*-x86_64]
+      values = [var.ami_filter]
     }
 }
 
