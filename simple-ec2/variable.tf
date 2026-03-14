@@ -25,4 +25,5 @@ variable "ami_owner" {
 variable "ami_filter" {
     description = "AMI name filer pattern"
     type = string
-    default = "ubuntu/images/hvm-ssd/ubuntu-*24.04-amd64-server-*""
+    default = "ubuntu/images/hvm-ssd/ubuntu-*24.04-amd64-server-*"
+}
